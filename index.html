@@ -1,20 +1,436 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reflexões sobre Consumo Consciente</title>
-  <link rel="stylesheet" href="estilo.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo Consciente e o Impacto no Meio Ambiente</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .progress-bar {
+            height: 5px;
+            background-color: #4ade80;
+            transition: width 0.3s ease;
+        }
+        
+        .eco-icon {
+            color: #10b981;
+        }
+        
+        .highlight-box {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid #10b981;
+        }
+        
+        .fact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
-<body>
-  <h1>Reflexões sobre o Consumo</h1>
-  <p class="intro">Será que estamos fazendo escolhas responsáveis como consumidores?</p>
-
-  <div class="cards">
-    <a href="paginas/consumo.html" class="card">Você realmente precisa do que está comprando?</a>
-    <a href="paginas/lixo.html" class="card">Para onde vai o lixo que você produz?</a>
-    <a href="paginas/impacto.html" class="card">Como suas escolhas afetam outras pessoas?</a>
-    <a href="paginas/origem.html" class="card">Você sabe de onde vem o que consome?</a>
-  </div>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <div class="fixed top-0 left-0 right-0 z-50">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="min-h-screen flex flex-col">
+        <!-- Slide 1: Capa -->
+        <div class="slide active flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-green-50 to-teal-50">
+            <div class="max-w-4xl text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-green-800 mb-6">Consumo Consciente</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold text-teal-700 mb-8">e o Impacto no Meio Ambiente</h2>
+                <div class="flex justify-center mb-8">
+                    <i class="fas fa-leaf eco-icon text-6xl"></i>
+                </div>
+                <p class="text-lg md:text-xl text-gray-600">Uma reflexão sobre nossas escolhas e seu impacto no planeta</p>
+            </div>
+            <div class="absolute bottom-8 left-0 right-0 text-center">
+                <p class="text-sm text-gray-500">Pressione a tecla → para avançar ou ← para voltar</p>
+            </div>
+        </div>
+        
+        <!-- Slide 2: Introdução -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-teal-50 to-blue-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-teal-800 mb-8 text-center">Introdução</h2>
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+                    <p class="text-lg md:text-xl mb-6">No mundo atual, o consumo excessivo tornou-se um dos maiores desafios ambientais que enfrentamos. Cada escolha que fazemos como consumidores tem um impacto direto no meio ambiente.</p>
+                    <div class="highlight-box p-4 rounded-r-lg mb-6">
+                        <p class="text-teal-800 font-medium">Consumo consciente é a prática de refletir sobre nossas compras e hábitos, considerando não apenas o preço e a qualidade, mas também os impactos ambientais e sociais.</p>
+                    </div>
+                    <p class="text-lg md:text-xl">Nesta apresentação, exploraremos como pequenas mudanças em nossos hábitos podem fazer uma grande diferença para o planeta.</p>
+                </div>
+                <div class="flex justify-center">
+                    <i class="fas fa-globe-americas eco-icon text-5xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Dados Alarmantes -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-8 text-center">Dados Alarmantes</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-trash eco-icon text-3xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-blue-700">Resíduos Sólidos</h3>
+                        </div>
+                        <p class="text-gray-700">O Brasil produz cerca de <span class="font-bold text-blue-800">79 milhões de toneladas</span> de resíduos sólidos por ano, sendo que apenas <span class="font-bold text-blue-800">3%</span> são reciclados.</p>
+                    </div>
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-tint eco-icon text-3xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-blue-700">Água Virtual</h3>
+                        </div>
+                        <p class="text-gray-700">Para produzir <span class="font-bold text-blue-800">1kg de carne bovina</span> são necessários <span class="font-bold text-blue-800">15.000 litros</span> de água, enquanto 1kg de trigo requer apenas 1.300 litros.</p>
+                    </div>
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-fire eco-icon text-3xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-blue-700">Emissões de CO₂</h3>
+                        </div>
+                        <p class="text-gray-700">A produção de bens de consumo é responsável por <span class="font-bold text-blue-800">45%</span> das emissões globais de gases de efeito estufa.</p>
+                    </div>
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-shopping-bag eco-icon text-3xl mr-4"></i>
+                            <h3 class="text-xl font-semibold text-blue-700">Plástico</h3>
+                        </div>
+                        <p class="text-gray-700">Cerca de <span class="font-bold text-blue-800">1 milhão</span> de garrafas plásticas são compradas a cada minuto no mundo, e a maioria não é reciclada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Pegada Ecológica -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-indigo-800 mb-8 text-center">Pegada Ecológica</h2>
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+                    <p class="text-lg md:text-xl mb-6">A pegada ecológica mede a quantidade de recursos naturais que consumimos em relação à capacidade do planeta de se regenerar.</p>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4">Comparação da Pegada Ecológica</h3>
+                        <div class="flex items-center mb-2">
+                            <div class="w-1/4 font-medium text-indigo-800">Estilo de Vida</div>
+                            <div class="w-3/4">
+                                <div class="h-6 bg-indigo-200 rounded-full">
+                                    <div class="h-6 bg-indigo-600 rounded-full" style="width: 20%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-1/4 font-medium text-indigo-800">Consciente</div>
+                            <div class="w-3/4">
+                                <div class="h-6 bg-indigo-200 rounded-full">
+                                    <div class="h-6 bg-indigo-600 rounded-full" style="width: 40%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center mb-2">
+                            <div class="w-1/4 font-medium text-indigo-800">Médio</div>
+                            <div class="w-3/4">
+                                <div class="h-6 bg-indigo-200 rounded-full">
+                                    <div class="h-6 bg-indigo-600 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-1/4 font-medium text-indigo-800">Consumista</div>
+                            <div class="w-3/4">
+                                <div class="h-6 bg-indigo-200 rounded-full">
+                                    <div class="h-6 bg-indigo-600 rounded-full" style="width: 120%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box p-4 rounded-r-lg">
+                        <p class="text-indigo-800 font-medium">Se todos vivessem como o brasileiro médio, seriam necessários <span class="font-bold">1,6 planetas</span> para sustentar nosso estilo de vida. Nos EUA, esse número sobe para 5 planetas!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Princípios do Consumo Consciente -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-purple-800 mb-8 text-center">Princípios do Consumo Consciente</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-question eco-icon text-purple-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-purple-700">Refletir</h3>
+                        </div>
+                        <p class="text-gray-700">Antes de comprar, pergunte-se: "Eu realmente preciso disso?" Consumir menos é o princípio mais básico do consumo consciente.</p>
+                    </div>
+                    
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-recycle eco-icon text-purple-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-purple-700">Reduzir, Reutilizar, Reciclar</h3>
+                        </div>
+                        <p class="text-gray-700">A ordem dos 3 Rs é importante: primeiro reduza seu consumo, depois reutilize o que já tem, e só então recicle o que não puder ser evitado.</p>
+                    </div>
+                    
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-industry eco-icon text-purple-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-purple-700">Conheça a Origem</h3>
+                        </div>
+                        <p class="text-gray-700">Prefira produtos de empresas com práticas sustentáveis e éticas. O barato pode sair caro para o meio ambiente.</p>
+                    </div>
+                    
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-utensils eco-icon text-purple-600"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-purple-700">Alimentação Sustentável</h3>
+                        </div>
+                        <p class="text-gray-700">Reduza o consumo de carne, prefira alimentos locais e da estação, e evite desperdícios. A produção de alimentos é responsável por 26% das emissões globais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Ações Práticas -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-pink-50 to-red-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-pink-800 mb-8 text-center">Ações Práticas</h2>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold text-pink-700 mb-4">Em Casa</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Reduza o tempo no banho e conserte vazamentos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Desligue aparelhos da tomada quando não estiverem em uso</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Separe o lixo reciclável e composte resíduos orgânicos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Prefira produtos de limpeza ecológicos</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-xl font-semibold text-pink-700 mb-4">No Consumo</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Leve sua própria sacola, caneca e talheres</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Compre em brechós e doe o que não usa</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Escolha produtos com menos embalagens</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-pink-500 mt-1 mr-2"></i>
+                                    <span>Repare em vez de substituir</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 highlight-box p-4 rounded-r-lg">
+                        <p class="text-pink-800 font-medium">Pequenas ações individuais, quando multiplicadas por milhões de pessoas, podem transformar realidades. Seja parte da solução!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 7: Benefícios -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-red-50 to-orange-50">
+            <div class="max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-red-800 mb-8 text-center">Benefícios do Consumo Consciente</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-globe-americas eco-icon text-red-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-700 mb-3 text-center">Para o Planeta</h3>
+                        <p class="text-gray-700 text-center">Redução da poluição, conservação de recursos naturais, menor emissão de gases de efeito estufa e preservação da biodiversidade.</p>
+                    </div>
+                    
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-users eco-icon text-red-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-700 mb-3 text-center">Para a Sociedade</h3>
+                        <p class="text-gray-700 text-center">Fomento a negócios éticos e sustentáveis, melhores condições de trabalho na cadeia produtiva e distribuição mais justa de recursos.</p>
+                    </div>
+                    
+                    <div class="fact-card bg-white rounded-xl shadow-lg p-6 flex flex-col">
+                        <div class="flex justify-center mb-4">
+                            <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                                <i class="fas fa-wallet eco-icon text-red-600 text-2xl"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-red-700 mb-3 text-center">Para Você</h3>
+                        <p class="text-gray-700 text-center">Economia financeira, menos acumulação de objetos desnecessários, maior satisfação com o que se consome e saúde mais equilibrada.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 text-center">
+                    <p class="text-lg md:text-xl font-medium text-red-800">O consumo consciente não é sobre privação, mas sobre fazer escolhas mais inteligentes e alinhadas com seus valores.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 8: Conclusão -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+            <div class="max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-orange-800 mb-8">Conclusão</h2>
+                
+                <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 mb-8">
+                    <p class="text-lg md:text-xl mb-6">Vivemos em um planeta com recursos finitos, mas nosso consumo muitas vezes age como se esses recursos fossem infinitos. O consumo consciente é a ponte entre o mundo que temos e o mundo que queremos deixar para as futuras gerações.</p>
+                    
+                    <div class="highlight-box p-4 rounded-r-lg mb-6">
+                        <p class="text-orange-800 font-medium">Cada real que gastamos é um voto pelo tipo de mundo que desejamos. Que tipo de mundo você está ajudando a construir com suas escolhas de consumo?</p>
+                    </div>
+                    
+                    <p class="text-lg md:text-xl">Comece pequeno, mas comece agora. Escolha uma área da sua vida para aplicar o consumo consciente hoje mesmo. O planeta agradece!</p>
+                </div>
+                
+                <div class="flex justify-center mb-8">
+                    <i class="fas fa-seedling eco-icon text-6xl"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 9: Créditos -->
+        <div class="slide flex flex-col items-center justify-center p-6 min-h-screen bg-gradient-to-br from-yellow-50 to-green-50">
+            <div class="max-w-4xl text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-8">Obrigado!</h2>
+                
+                <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                    <p class="text-lg md:text-xl mb-6">Esta apresentação foi criada para conscientizar sobre a importância do consumo sustentável e seu impacto no meio ambiente.</p>
+                    
+                    <div class="flex justify-center mb-6">
+                        <img src="https://avatars.githubusercontent.com/u/123456789?v=4" alt="Avatar" class="w-24 h-24 rounded-full border-4 border-green-200">
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold text-green-700 mb-2">Mik-Tek</h3>
+                    <p class="text-gray-600 mb-6">Desenvolvedor e entusiasta da sustentabilidade</p>
+                    
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://github.com/Mik-Tek" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white rounded-full w-12 h-12 flex items-center justify-center">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button onclick="restartPresentation()" class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-6 rounded-full transition duration-300 flex items-center">
+                        <i class="fas fa-redo mr-2"></i> Reiniciar Apresentação
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="fixed bottom-4 right-4 z-50 flex space-x-2">
+        <button onclick="prevSlide()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        <button onclick="nextSlide()" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const progressBar = document.getElementById('progressBar');
+        
+        function updateSlide() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+        
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSlide();
+            }
+        }
+        
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlide();
+            }
+        }
+        
+        function restartPresentation() {
+            currentSlide = 0;
+            updateSlide();
+        }
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+        
+        // Initialize
+        updateSlide();
+    </script>
 </body>
 </html>
